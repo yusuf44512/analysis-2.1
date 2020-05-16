@@ -1,0 +1,128 @@
+using System;
+
+namespace covid_19_risk_analizi
+{
+    class Program
+    {
+        private static int i;
+
+        static void Main(string[] args)
+        {
+            // hastane, klinik, eczane,banka,berber,havalimanı,havaalanı,pazar  
+            int yaş, evdeki_hasta_sayısı, risk_derecesi, x, y, z, t, yaşadığı_bölge_nüfusu, genel_risk_toplamı, çalışılan_yer;
+            string ad, pozitif_tanı_cavabı;
+            Console.WriteLine("********Korona Virüs Risk Analiz Programına Hoşgeldiniz/Welcome to the Corona Virus Risk Analysis Program*********");
+            Console.WriteLine("Aşağıda belirtilen her sonuç risk grubunuzu belirtmez. lütfen sonucu bakleyiniz!");
+            Console.WriteLine("lütfen küçük harflere dikkat ediniz/please note lowercase letters");
+            Console.WriteLine("Lütfen sayı ile yazmanız gereken yerlerde sayı karakterlerini kullanınız");
+            Console.Write("(ad/soyad)-(name/surname)=");
+            Console.ReadLine();
+            Console.Write("kaç yaşındasınız=");
+            yaş = Convert.ToInt32(Console.ReadLine());
+            if (yaş >= 65 || yaş <= 5)
+
+                Console.WriteLine("{0}.derece risk grubu", x = 1);
+
+            else if (yaş <= 64 && yaş >= 40)
+
+                Console.WriteLine("{0}.dereceden risk grubu", x = 2);
+
+            else if (yaş <= 39 && yaş >= 20)
+
+                Console.WriteLine("{0}. derece risk grubu", x = 3);
+            else
+                Console.WriteLine("{0}. derece risk grubu", x = 4);
+
+            Console.Write("Yaşanılan Bölge Nüfusu="); 
+
+            yaşadığı_bölge_nüfusu = Convert.ToInt32(Console.ReadLine());
+            if (yaşadığı_bölge_nüfusu >= 5000000)
+                Console.WriteLine("{0}.derece risk grubu", y = 1);
+            else if (yaşadığı_bölge_nüfusu >= 2000000)
+                Console.WriteLine("{0}.derece risk grubu", y = 2);
+            else if (yaşadığı_bölge_nüfusu >= 500000)
+                Console.WriteLine("{0}.derece risk grubu", y = 3);
+            else
+                Console.WriteLine("{0}.derece risk grubu", y = 4);
+
+            Console.Write("Çalışılan Yer(Mekan)= (hastane(1), pazar(2), klinik(3), eczane(4), banka(5), berber(6), havaalanı(7), diğer(8)) ");
+            çalışılan_yer = Convert.ToInt32(Console.ReadLine());
+            int hastane = 1, pazar = 2, klinik = 3, eczane = 4, banka = 5, berber = 6, havalimanı = 7, havaalanı = 7, diğer = 8;
+            {
+                if (çalışılan_yer == 1)
+                    Console.Write("{0}.derece risk grubu", z = 1);
+                else if (çalışılan_yer == 2)
+                    Console.WriteLine("{0}.derece risk grubu", z = 1);
+                else if (çalışılan_yer == 3)
+                    Console.WriteLine("{0}.derece risk grubu", z = 1);
+                else if (çalışılan_yer == 4)
+                    Console.WriteLine("{0}.derece risk grubu", z = 1);
+                else if (çalışılan_yer == 5)
+                    Console.WriteLine("{0}.derece risk grubu", z = 1);
+                else if (çalışılan_yer == 6)
+                    Console.WriteLine("{0}.derece risk grubu", z = 1);
+                else if (çalışılan_yer == 7)
+                    Console.WriteLine("{0}.derece risk grubu", z = 1);
+                else
+                    Console.WriteLine("{0}.derece risk grubu", z = 4);
+                
+            }
+            
+           Console.Write("Evde pozitif tanı konulan birey mevcutmu(E/H)? ");
+           pozitif_tanı_cavabı=Console.ReadLine();
+            t = Convert.ToInt32(Console.Read());
+
+            
+            if (pozitif_tanı_cavabı == "e")
+            {
+                
+                Console.WriteLine("{0}.derece risk grubu", t = 1);
+                Console.Read();
+                Console.Write("Kaç tane pozitif vaka vardır? ");
+               evdeki_hasta_sayısı = Convert.ToInt32(Console.ReadLine());
+                string[] ad_soyad = new string[evdeki_hasta_sayısı];
+                string[] akraba_durumu = new string[evdeki_hasta_sayısı];
+                int[] hastanın_yaşı = new int[evdeki_hasta_sayısı];
+                for (int i = 0; i < evdeki_hasta_sayısı; i++);
+                int a = 1;
+                {
+                    
+                        while (a<=evdeki_hasta_sayısı)
+                    {   Console.Write(i + 1 + " Ad/Soyad=");
+                        ad_soyad[i] = Console.ReadLine();
+
+                        Console.Write(i + 1 + " Hasta ile olan akraba durumu=");
+                        akraba_durumu[i] = Console.ReadLine();
+
+                        Console.Write(i + 1 + " Hastanın yaşı=");
+                        hastanın_yaşı[i] = Convert.ToInt32(Console.ReadLine());
+                        a++;
+                    }
+                }    
+                    Console.WriteLine("Yakın Hastaların:        Adı/Soyadı       Akrabalık Durumu      Yaşı");
+                        Console.WriteLine();
+                    for (int i = 0; i < evdeki_hasta_sayısı; i++) ;
+                int b = 0;
+                    {
+                    while (b<=evdeki_hasta_sayısı)
+                        {
+                        Console.WriteLine("                               " + ad_soyad[i] + "             " + akraba_durumu[i] + "                   " + hastanın_yaşı[i]);
+                        b++;
+                    }
+
+                    }
+           
+            }
+            else
+                Console.WriteLine("{0}.derece risk grubu", t = 3);
+           
+               
+                genel_risk_toplamı = x + y +z+ t ;
+                Console.WriteLine("Genel Risk Toplamı=" + genel_risk_toplamı);
+                genel_risk_toplamı = Convert.ToInt32(Console.ReadLine());
+            Console.ReadKey();
+
+
+        }
+    }
+}
